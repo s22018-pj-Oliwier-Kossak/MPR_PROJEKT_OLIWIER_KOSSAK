@@ -13,5 +13,5 @@ public class Car {
         this.Scales=Scales;
 
     }
-    
+
 }
