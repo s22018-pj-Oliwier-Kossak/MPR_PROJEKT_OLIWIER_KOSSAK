@@ -8,7 +8,12 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-		System.out.println("Hello123");
+		Car car1 = new Car("Ford",2,"zielony", 1400);
+		car1.setColor("zielony");
+		car1.setModel("ford");
+		car1.setEngine(17);
+		car1.setScales(2000);
+		CarService.print_car();
 
 	}
 
