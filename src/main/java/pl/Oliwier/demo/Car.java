@@ -1,13 +1,25 @@
 package pl.Oliwier.demo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Car {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String Model;
     private float Engine;
     private String Color;
     private float Scales;
     private int kolo;
+    public Car(){
 
-    Car(String Model,float Engine,String Color,float Scales,int kolo){
+    }
+
+   Car(String Model,float Engine,String Color,float Scales,int kolo){
         this.Model=Model;
         this.Engine=Engine;
         this.Color=Color;

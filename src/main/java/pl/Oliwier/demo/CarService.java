@@ -4,6 +4,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CarService {
+    private final CarRepository CarRepository;
+
+    public CarService(CarRepository carRepository) {
+        CarRepository = carRepository;
+    }
 
     public void print_car(Car car){
 
@@ -12,7 +17,10 @@ public class CarService {
     public Car CarSecondMethod(String model,String color){
 
         Car car=new Car(model,1,color,4,5);
-        return car;
+        Car car1=new Car("ford",2,"neivieski",32,32);
+
+        return CarRepository.save(car1);
+
 
     }
     public static void koło_zapasowe(Car car){
