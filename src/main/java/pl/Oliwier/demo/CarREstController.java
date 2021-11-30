@@ -1,12 +1,10 @@
 package pl.Oliwier.demo;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/cars")
+@RequestMapping("/car")
 
 public class CarREstController {
     private final CarService carService;
@@ -18,9 +16,14 @@ public class CarREstController {
 
         return ResponseEntity.ok("hello World");
     } */
-    @GetMapping
-    public ResponseEntity<Car> CarSecondMethod(){
+    @GetMapping("/method/{model}/{color}")
+    public ResponseEntity<Car> CarSecondMethod(@PathVariable String model,@PathVariable String color) {
 
-        return ResponseEntity.ok(carService.CarSecondMethod("model","color"));
+        return  ResponseEntity.ok(carService.CarSecondMethod(model,color));
+    }
+    @GetMapping("/methods")
+    public ResponseEntity<Car> CarSecondMethod2(@RequestParam String model, @RequestParam String color){
+
+        return ResponseEntity.ok(carService.CarSecondMethod(model,color));
     }
 }

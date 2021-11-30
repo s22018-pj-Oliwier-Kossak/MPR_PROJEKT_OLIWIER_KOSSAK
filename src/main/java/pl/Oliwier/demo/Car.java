@@ -10,32 +10,38 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    private String Marka;
     private String Model;
-    private float Engine;
+    private float Capacity;
+    private String VIN;
     private String Color;
-    private float Scales;
-    private int kolo;
-    public Car(){
+    private int Weight;
+    private int Wheels;
 
-    }
 
-   Car(String Model,float Engine,String Color,float Scales,int kolo){
+   Car(String Marka,String Model,float Capacity,String VIN,String Color,int Weight,int Wheels){
+        this.Marka=Marka;
         this.Model=Model;
-        this.Engine=Engine;
+        this.Capacity=Capacity;
+        this.VIN=VIN;
         this.Color=Color;
-        this.Scales=Scales;
-        this.kolo=kolo;
+        this.Weight=Weight;
+        this.Wheels=Wheels;
 
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "Model='" + Model + '\'' +
-                ", Engine=" + Engine +
+                "id=" + id +
+                ", Marka='" + Marka + '\'' +
+                ", Model='" + Model + '\'' +
+                ", Capacity=" + Capacity +
+                ", VIN='" + VIN + '\'' +
                 ", Color='" + Color + '\'' +
-                ", Scales=" + Scales +
-                ", kolo=" + kolo +
+                ", Weight=" + Weight +
+                ", Wheels=" + Wheels +
                 '}';
     }
 
@@ -47,12 +53,28 @@ public class Car {
         Model = model;
     }
 
-    public float getEngine() {
-        return Engine;
+    public String getMarka() {
+        return Marka;
     }
 
-    public void setEngine(float engine) {
-        Engine = engine;
+    public void setMarka(String marka) {
+        Marka = marka;
+    }
+
+    public float getCapacity() {
+        return Capacity;
+    }
+
+    public void setCapacity(float capacity) {
+        Capacity = capacity;
+    }
+
+    public String getVIN() {
+        return VIN;
+    }
+
+    public void setVIN(String VIN) {
+        this.VIN = VIN;
     }
 
     public String getColor() {
@@ -63,19 +85,19 @@ public class Car {
         Color = color;
     }
 
-    public float getScales() {
-        return Scales;
+    public int getWeight() {
+        return Weight;
     }
 
-    public void setScales(float scales) {
-        Scales = scales;
+    public void setWeight(int weight) {
+        Weight = weight;
     }
 
-    public int getKolo() {
-        return kolo;
+    public int getWheels() {
+        return Wheels;
     }
 
-    public void setKolo(int kolo) {
-        this.kolo = kolo;
+    public void setWheels(int wheels) {
+        Wheels = wheels;
     }
 }
