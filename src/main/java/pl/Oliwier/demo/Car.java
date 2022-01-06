@@ -7,7 +7,9 @@ import javax.persistence.Id;
 
 @Entity
 public class Car {
+    public  Car(){
 
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

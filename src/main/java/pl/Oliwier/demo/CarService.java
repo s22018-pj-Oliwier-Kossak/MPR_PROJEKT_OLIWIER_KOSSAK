@@ -2,16 +2,20 @@ package pl.Oliwier.demo;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 
 
 @Service
 public class CarService {
+
     private final CarRepository CarRepository;
 
     public CarService(CarRepository carRepository) {
         CarRepository = carRepository;
     }
+
 
     public void print_car(Car car){
 
@@ -107,5 +111,33 @@ public class CarService {
             System.out.println("Model "+ model);
         }
     }
+
+
+    public List<Car> FindAllById(){
+
+        return CarRepository.findAll();
+
+    }
+
+    public Long countById(Long id){
+
+        return CarRepository.count();
+    }
+    public Car finBYId(Long id){
+        Optional<Car> byId = CarRepository.findById(id);
+        return  byId.orElse(null);
+    }
+    public boolean carExistsbyId(Long id){
+
+        return CarRepository.existsById(id);
+
+    }
+    public void DeleteById(Car car){
+
+         CarRepository.delete(car);
+
+    }
+
+
 }
 
